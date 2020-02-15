@@ -1,0 +1,80 @@
+public class Canary extends Bird
+{
+    /**
+     * Constructor for objects of class Canary
+     */
+    public Canary(String name)
+    {
+        super(); // call the constructor of the superclass Bird
+        this.name = name;
+        colour = "yellow"; // this overrides the value inherited from Bird
+    }
+    
+    /**
+     * Sing method overrides the sing method
+     * inherited from superclass Bird
+     */
+    @Override // good programming practice to use @Override to denote overridden methods
+    public void sing(){
+        System.out.println("tweet tweet tweet");
+    }
+    
+    /**
+     * toString method returns a String representation of the bird
+     * What superclass has Canary inherited this method from? 
+     */
+    @Override
+    public String toString()
+    {   //Print out all values related to canary
+        String strng ="";
+        strng+= "Canary; ";
+        strng+= "name: ";
+        strng+= name;
+        strng+= "; ";
+        strng+= "Colour: ";
+        strng+= colour;
+        strng+= "\n";
+        strng+= "Breathes: ";
+        strng+= breathes;
+        strng+= "; ";
+        strng+= "Skin: ";
+        strng+= hasSkin;
+        strng+= "; ";
+        strng+= "Flies: ";
+        strng+= flies;
+        strng+= "; ";
+        strng+= "Feathers: ";
+        strng+= hasFeathers;
+        strng+= "; ";
+        strng+= "Wings: ";
+        strng+= hasWings;
+        return strng;
+    }
+
+    
+    /**
+     * equals method defines how equality is defined between 
+     * the instances of the Canary class
+     * param Object
+     * return true or false depending on whether the input object is 
+     * equal to this Canary object
+     */
+    
+    @Override
+    public boolean equals(java.lang.Object object)
+    {   //If there is no object, it will return false
+        if(this == object)
+        {
+            return true;
+        }
+        if(object instanceof Canary)
+        {
+            Canary canary = (Canary) object;    //Object is casted into Canary
+            if(name == canary.name && colour == canary.colour)  //Compares the name and colour
+            {
+                return true;
+            }
+        }
+        return false; //default equals
+    }
+}
