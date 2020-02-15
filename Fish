@@ -1,0 +1,35 @@
+public abstract class Fish extends Animal
+{
+    boolean hasFins;
+    boolean swim;
+    boolean hasGills;
+    
+    public Fish()
+    {
+        super(); //calls the constructor of its superclass  - Animal
+        colour = "Black"; //overrides the value of colour inherited from Animal
+        hasFins = true;
+        swim = true;
+        hasGills = true;
+    }
+    
+    @Override // good programming practice to use @Override to denote overridden methods
+    public void move(int distance){
+        if(swim){
+            System.out.printf("I swim %d metres \n", distance);
+        }else{
+            System.out.printf("I am a fish but cannot swim. I walk %d metres \n", distance);
+        }
+    }
+   
+    public boolean hasFins(){
+        return hasFins;
+    }
+    
+    /**
+     * 'getter' method for the hasFeathers field
+     */
+    public boolean hasGills(){
+        return hasGills;
+    }
+}
