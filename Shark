@@ -1,0 +1,65 @@
+public class Shark extends Fish
+{
+    boolean canBite;
+    boolean dangerous;
+    
+    public Shark(String name)
+    {
+        super();                // call the constructor of the superclass Fish
+        this.name = name;
+        colour = "Grey";        // this overrides the value inherited from Fish
+        canBite = true;
+        dangerous = true;
+    }
+    
+    @Override
+    public String toString()
+    {   //Print out all values related to shark
+        String strng ="";
+        strng+= "Ostrich; ";
+        strng+= "Name: ";
+        strng+= name;
+        strng+= "; ";
+        strng+= "Colour: ";
+        strng+= colour;
+        strng+= "\n";
+        strng+= "Breathes: ";
+        strng+= breathes;
+        strng+= "; ";
+        strng+= "Skin: ";
+        strng+= hasSkin;
+        strng+= "; ";
+        strng+= "Fins: ";
+        strng+= hasFins;
+        strng+= "; ";
+        strng+= "Swims: ";
+        strng+= swim;
+        strng+= "; ";
+        strng+= "Gills: ";
+        strng+= hasGills;
+        strng+= "; ";
+        strng+= "Bites: ";
+        strng+= canBite;
+        strng+= "; ";
+        strng+= "Dangerous: ";
+        return strng;
+    }
+    
+    @Override
+    public boolean equals(java.lang.Object object)
+    {
+        if(this == object)
+        {
+            return true;
+        }
+        if(object instanceof Shark)
+        {
+            Shark shark = (Shark) object;
+            if(name == shark.name && colour == shark.colour)
+            {
+                return true;
+            }
+        }
+        return false; //default equals
+    }
+}
