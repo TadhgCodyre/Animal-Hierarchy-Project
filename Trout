@@ -1,0 +1,62 @@
+public class Trout extends Fish
+{
+    boolean hasSpikes;
+    boolean edible;
+    boolean river;
+    
+    public Trout(String name)
+    {
+        super();                    // call the constructor of the superclass Fish
+        this.name = name;
+        colour = "Brown";           // this overrides the value inherited from Fish
+        hasSpikes = false;
+        edible = true;
+        river = true;
+    }
+    
+    @Override
+    public String toString()
+    {   //Print out all values related to trout
+        String strng ="";
+        strng+= "Ostrich; ";
+        strng+= "Name: ";
+        strng+= name;
+        strng+= "; ";
+        strng+= "Colour: ";
+        strng+= colour;
+        strng+= "\n";
+        strng+= "Breathes: ";
+        strng+= breathes;
+        strng+= "; ";
+        strng+= "Skin: ";
+        strng+= hasSkin;
+        strng+= "; ";
+        strng+= "Has spikes: ";
+        strng+= hasSpikes;
+        strng+= "; ";
+        strng+= "Edible: ";
+        strng+= edible;
+        strng+= "; ";
+        strng+= "Swims upstream to lay eggs: ";
+        strng+= river;
+        return strng;
+    }
+    
+    @Override
+    public boolean equals(java.lang.Object object)
+    {
+        if(this == object)
+        {
+            return true;
+        }
+        if(object instanceof Trout)
+        {
+            Trout trout = (Trout) object;
+            if(name == trout.name && colour == trout.colour)
+            {
+                return true;
+            }
+        }
+        return false; //default equals
+    }
+}
