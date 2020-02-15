@@ -1,0 +1,68 @@
+class Ostrich extends Bird
+{
+    boolean tall;
+    boolean longLegs;
+    
+    public Ostrich(String name)
+    {
+        super(); // call the constructor of the superclass Bird
+        this.name = name;
+        colour = "Grey"; // this overrides the value inherited from Bird
+        flies = false;
+        tall = true;
+        longLegs = true;
+    }
+   
+    @Override
+    public String toString()
+    {   //Print out all values related to ostrich
+        String strng ="";
+        strng+= "Ostrich; ";
+        strng+= "Name: ";
+        strng+= name;
+        strng+= "; ";
+        strng+= "Colour: ";
+        strng+= colour;
+        strng+= "\n";
+        strng+= "Breathes: ";
+        strng+= breathes;
+        strng+= "; ";
+        strng+= "Skin: ";
+        strng+= hasSkin;
+        strng+= "; ";
+        strng+= "Flies: ";
+        strng+= flies;
+        strng+= "; ";
+        strng+= "Feathers: ";
+        strng+= hasFeathers;
+        strng+= "; ";
+        strng+= "Wings: ";
+        strng+= hasWings;
+        strng+= "; ";
+        strng+= "Tall: ";
+        strng+= tall;
+        strng+= "; ";
+        strng+= "Thin long legs: ";
+        strng+= longLegs;
+        return strng;
+    }
+    
+    @Override
+    public boolean equals(java.lang.Object object)
+    {
+        //Same logic from Canary class
+        if(this == object)
+        {
+            return true;
+        }
+        if(object instanceof Ostrich)
+        {
+            Ostrich ostrich = (Ostrich) object;
+            if(name == ostrich.name && colour == ostrich.colour)
+            {
+                return true;
+            }
+        }
+        return false; //default equals
+    }
+}
